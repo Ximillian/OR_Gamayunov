@@ -1,0 +1,379 @@
+ximillian@Ximillian:~$ git --status
+unknown option: --status
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+ximillian@Ximillian:~$ git config --list
+user.name=Ximillian
+user.mail=gamayunov@outlook.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+ximillian@Ximillian:~$ git branch
+ximillian@Ximillian:~$ git config color.iu true
+ximillian@Ximillian:~$ git config color.status auto
+ximillian@Ximillian:~$ git config color.branch auto
+ximillian@Ximillian:~$ git --help
+usage: git [-v | --version] [-h | --help] [-C <path>] [-c <name>=<value>]
+           [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
+           [-p | --paginate | -P | --no-pager] [--no-replace-objects] [--bare]
+           [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
+           [--config-env=<name>=<envvar>] <command> [<args>]
+
+These are common Git commands used in various situations:
+
+start a working area (see also: git help tutorial)
+   clone     Clone a repository into a new directory
+   init      Create an empty Git repository or reinitialize an existing one
+
+work on the current change (see also: git help everyday)
+   add       Add file contents to the index
+   mv        Move or rename a file, a directory, or a symlink
+   restore   Restore working tree files
+   rm        Remove files from the working tree and from the index
+
+examine the history and state (see also: git help revisions)
+   bisect    Use binary search to find the commit that introduced a bug
+   diff      Show changes between commits, commit and working tree, etc
+   grep      Print lines matching a pattern
+   log       Show commit logs
+   show      Show various types of objects
+   status    Show the working tree status
+
+grow, mark and tweak your common history
+   branch    List, create, or delete branches
+   commit    Record changes to the repository
+   merge     Join two or more development histories together
+   rebase    Reapply commits on top of another base tip
+   reset     Reset current HEAD to the specified state
+   switch    Switch branches
+   tag       Create, list, delete or verify a tag object signed with GPG
+
+collaborate (see also: git help workflows)
+   fetch     Download objects and refs from another repository
+   pull      Fetch from and integrate with another repository or a local branch
+   push      Update remote refs along with associated objects
+
+'git help -a' and 'git help -g' list available subcommands and some
+concept guides. See 'git help <command>' or 'git help <concept>'
+to read about a specific subcommand or concept.
+See 'git help git' for an overview of the system.
+ximillian@Ximillian:~$ cd home/ximillian/OR_Gamayunov
+bash: cd: home/ximillian/OR_Gamayunov: No such file or directory
+ximillian@Ximillian:~$ cd /home/ximillian/OR_Gamayunov
+ximillian@Ximillian:~/OR_Gamayunov$ git init
+Reinitialized existing Git repository in /home/ximillian/OR_Gamayunov/.git/
+ximillian@Ximillian:~/OR_Gamayunov$ git config --list
+user.name=Ximillian
+user.mail=gamayunov@outlook.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:Ximillian/OR_Gamayunov.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+ximillian@Ximillian:~/OR_Gamayunov$ git status
+On branch main
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+ximillian@Ximillian:~/OR_Gamayunov$ touch readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ echo 'Hello!' > readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ echo readme.txt
+readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ nano readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ echo 'Hello!' >> readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ nano readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ rm readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ dir
+ximillian@Ximillian:~/OR_Gamayunov$ echo 'Hello!' >> readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ nano readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+Author identity unknown
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'ximillian@Ximillian.(none)')
+ximillian@Ximillian:~/OR_Gamayunov$ git config --list
+user.name=Ximillian
+user.mail=gamayunov@outlook.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:Ximillian/OR_Gamayunov.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+ximillian@Ximillian:~/OR_Gamayunov$ git config --global user.email gamayunov@outlook.com
+ximillian@Ximillian:~/OR_Gamayunov$ git config --list
+user.name=Ximillian
+user.mail=gamayunov@outlook.com
+user.email=gamayunov@outlook.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+remote.origin.url=git@github.com:Ximillian/OR_Gamayunov.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+ximillian@Ximillian:~/OR_Gamayunov$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+On branch main
+
+Initial commit
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	readme.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+ximillian@Ximillian:~/OR_Gamayunov$ git add readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ cit commit
+Command 'cit' not found, did you mean:
+  command 'cnt' from deb open-infrastructure-compute-tools (20221223-3)
+  command 'cht' from deb chemtool (1.6.14-6)
+  command 'cil' from deb cil (0.07.00-12)
+  command 'clit' from deb convlit (1.8-4)
+  command 'wit' from deb wit (3.01a-4.1)
+  command 'cvt' from deb xcvt (0.1.2-1)
+  command 'git' from deb git (1:2.43.0-1ubuntu7.1)
+  command 'crit' from deb criu (3.17.1-3)
+  command 'ci' from deb rcs (5.10.1-1)
+  command 'cut' from deb coreutils (9.4-2ubuntu2)
+  command 'cat' from deb coreutils (9.4-2ubuntu2)
+  command 'cst' from deb imx-code-signing-tool (3.3.2+dfsg-1)
+  command 'vit' from deb vit (2.3.2-1)
+  command 'cct' from deb proj-bin (9.3.1-1)
+Try: sudo apt install <deb name>
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+[main (root-commit) 56dc574] Added file readme.txt, which contains text 'Hello!'
+ 1 file changed, 1 insertion(+)
+ create mode 100644 readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ git log
+commit 56dc574ba8f83f5626f6635d0997238eeee2337b (HEAD -> main)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:42:30 2024 +0000
+
+    Added file readme.txt, which contains text 'Hello!'
+ximillian@Ximillian:~/OR_Gamayunov$ git push
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 252 bytes | 252.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Ximillian/OR_Gamayunov.git
+ * [new branch]      main -> main
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout -b Super2.0
+Switched to a new branch 'Super2.0'
+ximillian@Ximillian:~/OR_Gamayunov$ dir
+readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ echo 'New string' > readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ nano readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ git merge
+fatal: No remote for the current branch.
+ximillian@Ximillian:~/OR_Gamayunov$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+On branch Super2.0
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   readme.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+ximillian@Ximillian:~/OR_Gamayunov$ git restore readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ nano readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ git branch
+* Super2.0
+  main
+ximillian@Ximillian:~/OR_Gamayunov$ touch new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git add new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+[Super2.0 9ddd0de] Added empty file New_file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git push
+fatal: The current branch Super2.0 has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin Super2.0
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+ximillian@Ximillian:~/OR_Gamayunov$ git log
+commit 9ddd0deb4de01a6669d26a99794def012d1516cb (HEAD -> Super2.0)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:59:29 2024 +0000
+
+    Added empty file New_file
+
+commit 56dc574ba8f83f5626f6635d0997238eeee2337b (origin/main, main)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:42:30 2024 +0000
+
+    Added file readme.txt, which contains text 'Hello!'
+ximillian@Ximillian:~/OR_Gamayunov$ git merge
+fatal: No remote for the current branch.
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout master
+error: pathspec 'master' did not match any file(s) known to git
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout main
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+ximillian@Ximillian:~/OR_Gamayunov$ git merge Super2.0
+Updating 56dc574..9ddd0de
+Fast-forward
+ new_file | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git log
+commit 9ddd0deb4de01a6669d26a99794def012d1516cb (HEAD -> main, Super2.0)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:59:29 2024 +0000
+
+    Added empty file New_file
+
+commit 56dc574ba8f83f5626f6635d0997238eeee2337b (origin/main)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:42:30 2024 +0000
+
+    Added file readme.txt, which contains text 'Hello!'
+ximillian@Ximillian:~/OR_Gamayunov$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 291 bytes | 291.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:Ximillian/OR_Gamayunov.git
+   56dc574..9ddd0de  main -> main
+ximillian@Ximillian:~/OR_Gamayunov$ echo 'Lol' > new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git branch Super2.0
+fatal: a branch named 'Super2.0' already exists
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout Super2.0
+M	new_file
+Switched to branch 'Super2.0'
+ximillian@Ximillian:~/OR_Gamayunov$ echo 'Stop it' > new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout main
+M	new_file
+Switched to branch 'main'
+Your branch is up to date with 'origin/main'.
+ximillian@Ximillian:~/OR_Gamayunov$ git merge Super2.0
+Already up to date.
+ximillian@Ximillian:~/OR_Gamayunov$ dir
+new_file  readme.txt
+ximillian@Ximillian:~/OR_Gamayunov$ nano new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git branch
+  Super2.0
+* main
+ximillian@Ximillian:~/OR_Gamayunov$ git add
+Nothing specified, nothing added.
+hint: Maybe you wanted to say 'git add .'?
+hint: Turn this message off by running
+hint: "git config advice.addEmptyPathspec false"
+ximillian@Ximillian:~/OR_Gamayunov$ git add new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+[main 342ea86] Added phrase "stop it" in new_file
+ 1 file changed, 1 insertion(+)
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout Super2.0
+Switched to branch 'Super2.0'
+ximillian@Ximillian:~/OR_Gamayunov$ nano new_file
+ximillian@Ximillian:~/OR_Gamayunov$ nano new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git add new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git commit
+[Super2.0 597aeaa] Added phrase "Dont stop" in new_file
+ 1 file changed, 1 insertion(+)
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout main
+Switched to branch 'main'
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+ximillian@Ximillian:~/OR_Gamayunov$ git merge Super2.0
+Auto-merging new_file
+CONFLICT (content): Merge conflict in new_file
+Automatic merge failed; fix conflicts and then commit the result.
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout --theirs new_file
+Updated 1 path from the index
+ximillian@Ximillian:~/OR_Gamayunov$ nano new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git add new_file
+ximillian@Ximillian:~/OR_Gamayunov$ git commit -m "Used new_file from Super2.0 branch"
+[main 956c95a] Used new_file from Super2.0 branch
+ximillian@Ximillian:~/OR_Gamayunov$ git log
+commit 956c95ac3a71a752bfc4e052d6d8b6ba857ef369 (HEAD -> main)
+Merge: 342ea86 597aeaa
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 09:26:56 2024 +0000
+
+    Used new_file from Super2.0 branch
+
+commit 597aeaa316b48ff2e8fb9b0e0275b5af828a7c61 (Super2.0)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 09:21:57 2024 +0000
+
+    Added phrase "Dont stop" in new_file
+
+commit 342ea86cce6018fc77ae532c6f167267059fd01f
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 09:19:50 2024 +0000
+
+    Added phrase "stop it" in new_file
+
+commit 9ddd0deb4de01a6669d26a99794def012d1516cb (origin/main)
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:59:29 2024 +0000
+
+    Added empty file New_file
+
+commit 56dc574ba8f83f5626f6635d0997238eeee2337b
+Author: Ximillian <gamayunov@outlook.com>
+Date:   Sat Oct 26 08:42:30 2024 +0000
+
+    Added file readme.txt, which contains text 'Hello!'
+ximillian@Ximillian:~/OR_Gamayunov$ git merge Super2.0
+Already up to date.
+ximillian@Ximillian:~/OR_Gamayunov$ git checkout main
+Already on 'main'
+Your branch is ahead of 'origin/main' by 3 commits.
+  (use "git push" to publish your local commits)
+ximillian@Ximillian:~/OR_Gamayunov$ git merge Super2.0
+Already up to date.
+ximillian@Ximillian:~/OR_Gamayunov$ git push
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (7/7), 708 bytes | 708.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:Ximillian/OR_Gamayunov.git
+   9ddd0de..956c95a  main -> main
+ximillian@Ximillian:~/OR_Gamayunov$ ^C
+ximillian@Ximillian:~/OR_Gamayunov$ touch history1-4
+ximillian@Ximillian:~/OR_Gamayunov$ 
+
